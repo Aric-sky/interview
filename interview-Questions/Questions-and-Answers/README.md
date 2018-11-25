@@ -2256,41 +2256,41 @@ var element = {
 
 #### 原理
 
-		初始化参数：从配置文件和 Shell 语句中读取与合并参数，得出最终的参数
-		开始编译：用上一步得到的参数初始化 Compiler 对象，加载所有配置的插件，执行对象的 run 方法开始执行编译；
-		确定入口：根据配置中的 entry 找出所有的入口文件；
-		编译模块：从入口文件出发，调用所有配置的 Loader 对模块进行翻译，再找出该模块依赖的模块，再递归本步骤直到所有入口依赖的文件都经过了本步骤的处理；
-		完成模块编译：在经过第4步使用 Loader 翻译完所有模块后，得到了每个模块被翻译后的最终内容以及它们之间的依赖关系；
-		输出资源：根据入口和模块之间的依赖关系，组装成一个个包含多个模块的 Chunk，再把每个 Chunk 转换成一个单独的文件加入到输出列表，这步是可以修改输出内容的最后机会；
-		输出完成：在确定好输出内容后，根据配置确定输出的路径和文件名，把文件内容写入到文件系统。
+	初始化参数：从配置文件和 Shell 语句中读取与合并参数，得出最终的参数
+	开始编译：用上一步得到的参数初始化 Compiler 对象，加载所有配置的插件，执行对象的 run 方法开始执行编译；
+	确定入口：根据配置中的 entry 找出所有的入口文件；
+	编译模块：从入口文件出发，调用所有配置的 Loader 对模块进行翻译，再找出该模块依赖的模块，再递归本步骤直到所有入口依赖的文件都经过了本步骤的处理；
+	完成模块编译：在经过第4步使用 Loader 翻译完所有模块后，得到了每个模块被翻译后的最终内容以及它们之间的依赖关系；
+	输出资源：根据入口和模块之间的依赖关系，组装成一个个包含多个模块的 Chunk，再把每个 Chunk 转换成一个单独的文件加入到输出列表，这步是可以修改输出内容的最后机会；
+	输出完成：在确定好输出内容后，根据配置确定输出的路径和文件名，把文件内容写入到文件系统。
 
 #### 优化
 
-		利用UglifyPlugin删除引用未使用的无用代码，压缩js代码，css添加minimize参数压缩css
-		通过commonsChunkPlugin提取公共代码
-		通过ParallelUglifyPlugin多线程压缩js代码
-		缩小文件范围，通过exclude ，inclue等配置路径，优化打包效率
-		通过happypack插件多线程处理loader
-		通过dllplugin接入动态链接库
+	利用UglifyPlugin删除引用未使用的无用代码，压缩js代码，css添加minimize参数压缩css
+	通过commonsChunkPlugin提取公共代码
+	通过ParallelUglifyPlugin多线程压缩js代码
+	缩小文件范围，通过exclude ，inclue等配置路径，优化打包效率
+	通过happypack插件多线程处理loader
+	通过dllplugin接入动态链接库
 
 - babel实现
 
-		babel-core：babel转译器本身，提供了babel的转译API，如babel.transform等，用于对代码进行转译。像webpack的babel-loader就是调用这些API来完成转译过程的。
-		babylon：js的词法解析器
-		babel-traverse：用于对AST（抽象语法树，想了解的请自行查询编译原理）的遍历，主要给plugin用
-		babel-generator：根据AST生成代码
-		babel的polyfill和runtime的区别:
+	babel-core：babel转译器本身，提供了babel的转译API，如babel.transform等，用于对代码进行转译。像webpack的babel-loader就是调用这些API来完成转译过程的。
+	babylon：js的词法解析器
+	babel-traverse：用于对AST（抽象语法树，想了解的请自行查询编译原理）的遍历，主要给plugin用
+	babel-generator：根据AST生成代码
+	babel的polyfill和runtime的区别:
 
-		Babel默认只转换新的JavaScript句法（syntax），而不转换新的API，比如Set、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。
+> Babel默认只转换新的JavaScript句法（syntax），而不转换新的API，比如Set、Proxy、Reflect、Symbol、Promise等全局对象，以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。
 
-		举例来说，ES6在Array对象上新增了Array.from方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用babel-polyfill，为当前环境提供一个垫片。
+> 举例来说，ES6在Array对象上新增了Array.from方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用babel-polyfill，为当前环境提供一个垫片。
 
 - ssr和客户端渲染的区别
 
-		* ssr 在服务器就把数据填充到html，返回的是完整的页面，利于所搜索引擎seo
-		* 更快的内容到达时间，特别是网络较差的时候
-		* 服务端代码没有客户端那么灵活组合
-		* 相比客户端渲染，ssr有更高的服务器负载，成本增加。
+	* ssr 在服务器就把数据填充到html，返回的是完整的页面，利于所搜索引擎seo
+	* 更快的内容到达时间，特别是网络较差的时候
+	* 服务端代码没有客户端那么灵活组合
+	* 相比客户端渲染，ssr有更高的服务器负载，成本增加。
 
 
 - 简单描述一下你做过的移动APP项目研发流程？
