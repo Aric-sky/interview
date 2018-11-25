@@ -1723,7 +1723,7 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 - css-loader的原理？
 
 
-## <a name='other'>前端框架</a>
+## <a name='frame'>前端框架</a>
 
 - React 使用场景？
 
@@ -1820,7 +1820,7 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 - React与Vue，各自的组件更新进行对比，它们有哪些区别？
 
 
-## <a name='other'>其他问题</a>
+## <a name='other'>其它问题</a>
 
 - 原来公司工作流程是怎么样的，如何与其他人协作的？如何跨部门合作的？
 
@@ -2158,28 +2158,28 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 - 通过proxy实现数据劫持
 
 ```
-		const OBSERVERS = new  Set(); //定义一个集合存放监听函数
-    const observeFn = fn => OBSERVERS.add(fn);  //定义一个监听器函数
-    const observeObj = obj => new Proxy(obj, {set});
-		function set(target, key, value, receiver) { //劫持set
-			const result = Reflect.set(target, key, value,receiver);
-			OBSERVERS.forEach(observeFn => observeFn());
-			return result;
-		}
-		var person = observeObj({
-			name: '张三',
-			age: 20
-		});
+	const OBSERVERS = new  Set(); //定义一个集合存放监听函数
+	const observeFn = fn => OBSERVERS.add(fn);  //定义一个监听器函数
+	const observeObj = obj => new Proxy(obj, {set});
+	function set(target, key, value, receiver) { //劫持set
+		const result = Reflect.set(target, key, value,receiver);
+		OBSERVERS.forEach(observeFn => observeFn());
+		return result;
+	}
+	var person = observeObj({
+		name: '张三',
+		age: 20
+	});
 
-		function print() {
-			console.log(`${person.name}, ${person.age}`)
-		}
-		function warn() {
-			alert(person.name)
-		}
-		observeFn(warn);
-		observeFn(print);
-		person.name = '李四';
+	function print() {
+		console.log(`${person.name}, ${person.age}`)
+	}
+	function warn() {
+		alert(person.name)
+	}
+	observeFn(warn);
+	observeFn(print);
+	person.name = '李四';
 ```
 
 - react生命周期 & setState
@@ -2346,7 +2346,7 @@ var element = {
 
 
 
-## <a name='web'>文档推荐</a>
+## <a name='webbook'>文档推荐</a>
 
 
 1. [jQuery 基本原理](http://docs.huihoo.com/jquery/jquery-fundamentals/zh-cn/index.html "jQuery 基本原理")
