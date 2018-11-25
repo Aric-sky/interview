@@ -3,17 +3,13 @@
 ## <a name='preface'>前言</a> ##
 
 
-[只看问题点这里 ](https://markyun.github.io/2015/Front-end-Developer-Questions/ "Questions")
+[只看问题点这里 ](https://github.com/Aric-sky/interview/tree/master/interview-Questions/Question "Questions")
 
-[看全部问题和答案点这里](https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers "Questions-and-Answers")
+[看全部问题和答案点这里](https://github.com/Aric-sky/interview/tree/master/interview-Questions/Questions-and-Answers "Questions-and-Answers")
 
 本文由我收集总结了一些前端面试题，初学者阅后也要用心钻研其中的原理，重要知识需要系统学习、透彻学习，形成自己的知识链。万不可投机取巧，临时抱佛脚只求面试侥幸混过关是错误的！也是不可能的！不可能的！不可能的！
 
 前端还是一个年轻的行业，新的行业标准， 框架， 库都不断在更新和新增，正如赫门在2015深JS大会上的《前端服务化之路》主题演讲中说的一句话：“每18至24个月，前端都会难一倍”，这些变化使前端的能力更加丰富、创造的应用也会更加完美。所以关注各种前端技术，跟上快速变化的节奏，也是身为一个前端程序员必备的技能之一。
-
-最近也收到许多微博私信的鼓励和更正题目信息，后面会经常更新题目和答案到[github博客](http://markyun.github.io/)。希望前端er达到既能使用也会表达，对理论知识有自己的理解。可根据下面的知识点一个一个去进阶学习，形成自己的职业技能链。
-
-**面试有几点需注意：(来源[寒冬winter](http://weibo.com/wintercn "微博：寒冬winter") 老师，github:@wintercn)**
 
 1. 面试题目： 根据你的等级和职位的变化，入门级到专家级，广度和深度都会有所增加。
 
@@ -64,23 +60,6 @@
 		9、HTML与XHTML —— 二者有什么区别，你觉得应该使用哪一个并说出理由。
 
 		10、JSON —— 作用、用途、设计结构。
-
-
-
-**备注：**
-
-	根据自己需要选择性阅读，面试题是对理论知识的总结，让自己学会应该如何表达。
-
-	资料答案不够正确和全面，欢迎欢迎Star和提交issues。
-
-	格式不断修改更新中。
-
-	更新记录：
-	2018-01-14： 公司在招聘前端，使用react技术栈；借此机会更新一波前端框架相关的题目；
-	2016-10-20： 更新一些已被发现的问题。
-	2016-03-25： 新增ECMAScript6 相关问题
-
-
 
 
 ## <a name='html'>HTML</a>
@@ -2247,14 +2226,3 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 	fork表示你想要补充完善这个项目的内容。
 
-	更新记录：
-	2018-01-14： 公司在招聘前端，使用react技术栈；借此机会更新一波前端框架相关的题目；
-	2016-10-20： 更新一些已被发现的问题。
-	2016-03-25： 新增ECMAScript6 相关问题
-
-
-### 更新时间:  2018-01-14
-
-	爱机车、爱骑行、爱旅行、爱摄影、爱阅读的前端开发攻城师。
-
-	我的微博：http://weibo.com/920802999
