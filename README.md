@@ -5,5 +5,5 @@
 [博客首页](https://blog.wangyuanqi.xyz/ "王元奇的博客")
 
 
-[前端开发面试题 Interview-Questions](https://github.com/markyun/My-blog/blob/master/Front-end-Developer-Questions "最新前端开发面试题")  (不定期更新) 欢迎Star和提交issues
+[前端开发面试题 Interview-Questions](https://github.com/Aric-sky/interview/tree/master/interview-Questions/Questions-and-Answers "最新前端开发面试题")  (不定期更新) 欢迎Star和提交issues
 
