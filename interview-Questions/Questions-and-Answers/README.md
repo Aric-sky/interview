@@ -1770,14 +1770,14 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 - 当组件的setState函数被调用之后，发生了什么？
 
-				React会做的第一件事就是把你传递给setState的参数对象合并到组件原先的state。这个事件会导致一个“reconciliation”（调和）的过程。reconciliation的最终目标就是，
-				尽可能以最高效的方法，去基于新的state来更新UI。为了达到这个目的，React会构建一个React元素树（你可以把这个想象成一个表示UI的一个对象）。一旦这个树构建完毕，
-				React为了根据新的state去决定UI要怎么进行改变，它会找出这棵新树和旧树的不同之处。React能够相对精确地找出哪些位置发生了改变以及如何发生了什么变化，
-				并且知道如何只通过必要的更新来最小化重渲染。
+		React会做的第一件事就是把你传递给setState的参数对象合并到组件原先的state。这个事件会导致一个“reconciliation”（调和）的过程。reconciliation的最终目标就是，
+		尽可能以最高效的方法，去基于新的state来更新UI。为了达到这个目的，React会构建一个React元素树（你可以把这个想象成一个表示UI的一个对象）。一旦这个树构建完毕，
+		React为了根据新的state去决定UI要怎么进行改变，它会找出这棵新树和旧树的不同之处。React能够相对精确地找出哪些位置发生了改变以及如何发生了什么变化，
+		并且知道如何只通过必要的更新来最小化重渲染。
 
 - 为什么循环产生的组件中要利用上key这个特殊的prop？
 
-				Keys负责帮助React跟踪列表中哪些元素被改变/添加/移除。React利用子元素的key在比较两棵树的时候，快速得知一个元素是新的还是刚刚被移除。没有keys，React也就不知道当前哪一个的item被移除了。
+		Keys负责帮助React跟踪列表中哪些元素被改变/添加/移除。React利用子元素的key在比较两棵树的时候，快速得知一个元素是新的还是刚刚被移除。没有keys，React也就不知道当前哪一个的item被移除了。
 
 - React-router 路由的实现原理？
 
@@ -1785,27 +1785,32 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 
 - 受控组件(Controlled Component)与非受控组件(Uncontrolled Component)的区别
 
+		受控组件：
+		input的value值必须是我们设置在constructor构造函数的state中的值，然后，通过onChange触发事件来改变state中保存的value值，这样形成一个循环的回路影响。也可以说是React负责渲染表单的组件仍然控制用户后续输入时所发生的变化。
+		非受控组件：
+		非受控也就意味着我可以不需要设置它的state属性，而通过ref来操作真实的DOM。
+
 - refs 是什么?
 
-			Refs是能访问DOM元素或组件实例的一个函数；
+		Refs是能访问DOM元素或组件实例的一个函数；
 
 - React为什么自己定义一套事件体系呢，与浏览器原生事件体系有什么关系？
 
 - 什么时候应该选择用class实现一个组件，什么时候用一个函数实现一个组件？
 
-			组件用到了state或者用了生命周期函数，那么就该使用Class component。其他情况下，应使用Functional component。
+		组件用到了state或者用了生命周期函数，那么就该使用Class component。其他情况下，应使用Functional component。
 
 - 什么是HoC（Higher-Order Component）？适用于什么场景？
 
-			高阶组件就是一个 React 组件包裹着另外一个 React 组件
+		高阶组件就是一个 React 组件包裹着另外一个 React 组件
 
 - 并不是父子关系的组件，如何实现相互的数据通信？
 
-			使用父组件，通过props将变量传入子组件 （如通过refs，父组件获取一个子组件的方法，简单包装后，将包装后的方法通过props传入另一个子组件 ）
+		使用父组件，通过props将变量传入子组件 （如通过refs，父组件获取一个子组件的方法，简单包装后，将包装后的方法通过props传入另一个子组件 ）
 
 - 用过 React 技术栈中哪些数据流管理库？
 
-			Redux\Dva
+		Redux\Dva
 
 - Redux是如何做到可预测呢？
 
